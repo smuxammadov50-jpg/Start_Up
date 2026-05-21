@@ -1,13 +1,12 @@
-import Footer from "./_components/Footer";
-import Header from "./_components/Header";
-import HomePage from "./_components/HomePage";
-import ViewUniversity from "./_components/ViewUniversity";
+
+import HomePage from "./Universities/HomePage";
+import ViewUniversity from "./Universities/ViewUniversity";
 
 const page = () => {
   return (
     <div>
-        <HomePage/>
-      {/* <ViewUniversity /> */}
+      <HomePage />
+      {/* <ViewUniversity/> */}
     </div>
   );
 };

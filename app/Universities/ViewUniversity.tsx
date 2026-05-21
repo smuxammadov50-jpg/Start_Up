@@ -2,7 +2,7 @@
 
 export default function ViewUniversity() {
   return (
-    <div className="min-h-screen bg-[#060c1a] text-white">
+    <div className="min-h-screen bg-[#060c1a] text-white select-none">
       {/* Orbs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-200px] left-[-100px] w-[500px] h-[500px] rounded-full opacity-20 bg-indigo-600 blur-[120px]" />
@@ -13,25 +13,9 @@ export default function ViewUniversity() {
       <div className="relative z-10 max-w-6xl mx-auto px-5 py-10">
         {/* BACK BUTTON */}
         <div className="mb-6">
-          <button
-            onClick={() => window.history.back()}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white/60 text-sm font-medium hover:bg-white/10 hover:text-white/90 transition-all duration-200 cursor-pointer"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 12L6 8L10 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white/60 text-sm font-medium hover:bg-white/10 hover:text-white/90 transition-all duration-200 cursor-pointer">
+            {/* Sof Tailwind CSS dagi strelka */}
+            <span className="w-2 h-2 border-b-2 border-l-2 border-currentColor rotate-45 inline-block -mr-0.5" />
             Orqaga qaytish
           </button>
         </div>
@@ -121,9 +105,9 @@ export default function ViewUniversity() {
         </div>
 
         {/* MAIN GRID */}
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* LEFT */}
-          <div className="col-span-2 flex flex-col gap-6">
+          <div className="lg:col-span-2 flex flex-col gap-6">
             {/* Academic */}
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:border-white/[0.12] transition-colors duration-300">
               <div className="px-6 py-6">
@@ -140,7 +124,7 @@ export default function ViewUniversity() {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                   <div>
                     <div className="text-xs text-white/35 mb-1">
                       Diplom turlari
