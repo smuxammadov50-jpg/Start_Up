@@ -39,10 +39,11 @@ export default function MainHero() {
           yaratishingiz mumkin.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-5">
+        <div className="flex flex-wrap justify-ce
+        nter gap-5">
           <Link
             href="/universities"
-            className="px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 font-bold tracking-wide transition-all duration-300 shadow-xl shadow-purple-600/25 hover:shadow-purple-600/40 hover:-translate-y-1 no-underline text-white"
+            className="px-8 py-4  mx-auto rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 font-bold tracking-wide transition-all duration-300 shadow-xl shadow-purple-600/25 hover:shadow-purple-600/40 hover:-translate-y-1 no-underline text-white"
           >
             Universitetlarni ko'rish →
           </Link>
