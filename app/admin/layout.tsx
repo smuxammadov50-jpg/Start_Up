@@ -146,34 +146,7 @@ export default function AdminLayout({
           </nav>
         </div>
 
-        <button
-          onClick={handleLogout}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "8px",
-            padding: "14px",
-            color: "#f87171",
-            backgroundColor: "transparent",
-            border: "1px solid transparent",
-            borderRadius: "12px",
-            fontSize: "14px",
-            fontWeight: "600",
-            cursor: "pointer",
-            transition: "0.2s",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(239, 68, 68, 0.1)";
-            e.currentTarget.style.borderColor = "rgba(239, 68, 68, 0.2)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.borderColor = "transparent";
-          }}
-        >
-          Chiqish (Logout) 🚪
-        </button>
+     <Link href="/">Chiqish (Logout) 🚪</Link>
       </aside>
 
       {/* ASOSIY KONTENT MAYDONI — Bootstrap sindira olmaydigan qat'iy chap padding */}
