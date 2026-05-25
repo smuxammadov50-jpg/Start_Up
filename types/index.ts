@@ -93,3 +93,24 @@ export interface University {
   tuition: string;
   image: string;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
