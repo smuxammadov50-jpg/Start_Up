@@ -7,7 +7,7 @@ export default function Header() {
   const { favorites } = useFavorites();
   const [isMounted, setIsMounted] = useState(false);
 
-  // Komponent brauzerga to'liq o'rnashganini (Hydration tugaganini) bilish uchun
+  // Hydration xatoligini oldini olish uchun
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -24,7 +24,7 @@ export default function Header() {
           <span className="text-white font-bold text-lg tracking-tight">UniSearch</span>
         </Link>
 
-        {/* MENYULAR */}
+        {/* MENYULAR VA ADMIN TUGMASI */}
         <div className="flex items-center gap-2">
           <Link href="/" className="px-4 py-2 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.06] transition-all no-underline">
             Bosh sahifa
@@ -36,12 +36,17 @@ export default function Header() {
           <Link href="/favorites" className="px-4 py-2 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/[0.06] transition-all no-underline flex items-center gap-1.5">
             <span>❤️</span>
             Saqlanganlar 
-            {/* AGAR brauzer to'liq yuklangan bo'lsa haqiqiy sonni ko'rsatadi,
-              aks holda (serverda) doim 0 turadi. Urush janjal tugadi!
-            */}
             <span className="bg-indigo-500/20 text-indigo-400 text-xs px-2 py-0.5 rounded-md font-bold ml-0.5">
               {isMounted ? favorites.length : 0}
             </span>
+          </Link>
+
+          {/* QAYTA TIKLANGAN ADMIN TUGMASI */}
+          <Link 
+            href="/login" 
+            className="ml-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 transition-all duration-200 border border-purple-500/40 active:scale-95 no-underline flex items-center gap-1"
+          >
+            Admin ⚙️
           </Link>
         </div>
 

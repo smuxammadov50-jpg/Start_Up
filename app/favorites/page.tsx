@@ -1,4 +1,6 @@
 "use client";
+import Footer from "../_components/Footer";
+import Header from "../_components/Header";
 import { useFavorites } from "../context/FavoritesContext";
 import Link from "next/link";
 
@@ -6,9 +8,10 @@ export default function FavoritesPage() {
   const { favorites, toggleFavorite } = useFavorites();
 
   return (
-    <div className="max-w-7xl mx-auto px-5 py-10 min-h-[75vh]">
-      <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">❤️ Saqlanganlar</h1>
-      <p className="text-sm text-white/40 mb-8">O'zingizga ma'qul kelgan universitetlar ro'yxati</p>
+    <div className="max-w-7xl mx-auto  min-h-[75vh]">
+      <Header />
+      <h1 className="text-3xl    mt-5  font-extrabold text-white tracking-tight ">❤️ Saqlanganlar</h1>
+      <p className="text-bold px-5 py-10 text-white/40 mb-2">O'zingizga ma'qul kelgan universitetlar ro'yxati</p>
 
       {favorites.length === 0 ? (
         /* Bo'sh holatdagi chiroyli blok */
@@ -25,7 +28,7 @@ export default function FavoritesPage() {
         </div>
       ) : (
         /* Saqlanganlar ro'yxati */
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1   p-10 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {favorites.map((uni) => (
             <div
               key={uni.id}
@@ -75,6 +78,7 @@ export default function FavoritesPage() {
           ))}
         </div>
       )}
+      <Footer/>
     </div>
   );
 }

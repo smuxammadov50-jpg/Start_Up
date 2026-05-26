@@ -6,7 +6,6 @@ import Footer from "./Footer";
 export default function MainHero() {
   return (
     <div className="bg-[#05070f] text-white min-h-[90vh] relative overflow-hidden flex flex-col justify-center">
-      {/* Liquid Blurs */}
       <Header />
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[-10%] left-[-5%] w-[550px] h-[550px] rounded-full bg-purple-600/10 blur-[130px] animate-liquid" />
@@ -34,13 +33,13 @@ export default function MainHero() {
         <p className="text-base  mt-5 sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12 font-light">
           Bu saytda siz o'zingizga mos universitetni topishingiz mumkin.
           Universitetlar haqida to'liq ma'lumot, grantlar, kontrakt narxlari va
-          talablar bilan tanishishingiz mumkin. Qolaversa bu saytda o'zingiz
+          talablar 
+          bilan tanishishingiz mumkin. Qolaversa bu saytda o'zingiz
           uchun zamonaviy va minimalizm stilidagi dizayndagi portfolioni ham
           yaratishingiz mumkin.
         </p>
 
-        <div className="flex flex-wrap justify-ce
-        nter gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           <Link
             href="/universities"
             className="px-8 py-4  mx-auto rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 font-bold tracking-wide transition-all duration-300 shadow-xl shadow-purple-600/25 hover:shadow-purple-600/40 hover:-translate-y-1 no-underline text-white"
@@ -50,7 +49,6 @@ export default function MainHero() {
         </div>
       </div>
 
-      {/* INFRASTRUKTURA VA MA'LUMOTLAR BO'LIMI (UZUN LANDING PAGE EFFEKTI) */}
       <section
         id="features"
         className="max-w-7xl mx-auto px-5 py-20 relative z-10 border-t border-white/[0.04] scroll-mt-16 w-full"
