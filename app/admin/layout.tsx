@@ -146,7 +146,7 @@ export default function AdminLayout({
           </nav>
         </div>
 
-     <Link href="/">Chiqish (Logout) 🚪</Link>
+     <Link href="/"  className="p-3  bg-red-500  rounded-md">Chiqish (Logout) </Link>
       </aside>
 
       {/* ASOSIY KONTENT MAYDONI — Bootstrap sindira olmaydigan qat'iy chap padding */}
