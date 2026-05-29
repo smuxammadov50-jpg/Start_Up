@@ -41,7 +41,6 @@ export default function AddRegionPage() {
       <h1 className="text-3xl font-bold mb-1">🌍 Regionlarni Boshqarish</h1>
       <p className="text-xs text-white/40 mb-8 uppercase tracking-widest">Yangi hudud kiritish va tahrirlash</p>
 
-      {/* REgion Qo'shish Formasi */}
       <form onSubmit={handleAddRegion} className="flex gap-3 mb-10 bg-white/[0.02] border border-white/10 p-5 rounded-2xl">
         <input
           type="text"
@@ -56,7 +55,6 @@ export default function AddRegionPage() {
         </button>
       </form>
 
-      {/* REGIONLAR JADVALI */}
       <div className="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden">
         <table className="w-full text-left border-collapse">
           <thead>

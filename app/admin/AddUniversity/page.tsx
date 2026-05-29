@@ -52,7 +52,7 @@ export default function AddUniversityPage() {
     axios
       .get("http://localhost:4000/regions")
       .then((res) => setRegions(res.data))
-      .catch(() => console.log("Regionlarni yuklashda xatolik"));
+      .catch(() => console.log("Xatolik yuz berdi!"));
   }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

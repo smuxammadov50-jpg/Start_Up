@@ -32,7 +32,7 @@ export default function LoginPage() {
 
       if (email.trim() === adminLogin && password === adminPassword) {
         localStorage.setItem("adminLogged", "true");
-        router.push("/admin/AddUniversity"); // Yo'nalishni aniq yozdik
+        router.push("/admin/"); // Yo'nalishni aniq yozdik
       } else {
         setError("Login yoki parol noto'g'ri!");
       }
@@ -45,7 +45,7 @@ export default function LoginPage() {
 
   return (
     <div className="login-wrapper">
-      <div className="login-card">
+      <div className="login-card ">
         <div className="login-header">
           <div className="login-logo">⚙️</div>
           <h1 className="login-title">Tizimga <span>Kirish</span></h1>
