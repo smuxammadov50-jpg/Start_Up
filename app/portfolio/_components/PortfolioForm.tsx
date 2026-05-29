@@ -13,9 +13,9 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
     image: "",
     job: "",
     company: "",
-    startupName: "",
-    startupDesc: "",
-    skills: "",
+    address: "",
+    interests: "",
+    projects: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -25,7 +25,7 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
       return;
     }
     onSubmit(formData);
-    setFormData({ name: "", age: "", phone: "", image: "", job: "", company: "", startupName: "", startupDesc: "", skills: "" });
+    setFormData({ name: "", age: "", phone: "", image: "", job: "", company: "", address: "", interests: "", projects: "" });
   };
 
   return (
@@ -34,6 +34,7 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
         Yangi raqamli portfolio anketasi
       </h2>
 
+      {/* ISMI VA YOSHI */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">To'liq ismingiz *</label>
@@ -59,6 +60,7 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
         </div>
       </div>
 
+      {/* TELEFON VA RASM */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
           <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Telefon raqam</label>
@@ -82,13 +84,14 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
         </div>
       </div>
 
+      {/* KASBI VA JOYI */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
-          <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Kasbingiz / Kelajakdagi kasb *</label>
+          <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Kasbingiz / Yo'nalishingiz *</label>
           <input
             type="text"
             required
-            placeholder="Full Stack Developer"
+            placeholder="Talaba / Grafik Dizayner"
             value={formData.job}
             onChange={(e) => setFormData({ ...formData, job: e.target.value })}
             className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
@@ -98,7 +101,7 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
           <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Kompaniya yoki Universitet</label>
           <input
             type="text"
-            placeholder="MIT University"
+            placeholder="O'zbekiston Milliy Universiteti"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
@@ -106,38 +109,39 @@ export default function PortfolioForm({ onSubmit }: FormProps) {
         </div>
       </div>
 
-      <div className="border-t border-white/[0.05] my-6 pt-5">
-        <h3 className="text-sm font-semibold text-white/70 mb-4">🚀 Start-up loyiha (Ixtiyoriy)</h3>
-        <div className="mb-5">
-          <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Start-up nomi</label>
-          <input
-            type="text"
-            placeholder="UniSearch System"
-            value={formData.startupName}
-            onChange={(e) => setFormData({ ...formData, startupName: e.target.value })}
-            className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
-          />
-        </div>
-        <div className="mb-5">
-          <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Start-up nima haqida?</label>
-          <textarea
-            placeholder="Platforma talabalarga xalqaro universitetlarni oson topishda yordam beradi..."
-            rows={3}
-            value={formData.startupDesc}
-            onChange={(e) => setFormData({ ...formData, startupDesc: e.target.value })}
-            className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all resize-none"
-          />
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Texnologiyalar / Ko'nikmalar (Vergül bilan ajrating)</label>
+      {/* YASHASh MANZILI */}
+      <div className="mb-5">
+        <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Yashash manzili (Viloyat, Shahar)</label>
         <input
           type="text"
-          placeholder="React, Next.js, Node.js, Tailwind CSS"
-          value={formData.skills}
-          onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
+          placeholder="Toshkent shahri, Chilonzor tumani"
+          value={formData.address}
+          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
           className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
+        />
+      </div>
+
+      {/* QIZIQIShLAR (VERGUL BILAN) */}
+      <div className="mb-5">
+        <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Nimalarga qiziqasiz? (Vergül bilan ajrating)</label>
+        <input
+          type="text"
+          placeholder="Kitob mutolaasi, Suzish, Shaxmat, Sayohat"
+          value={formData.interests}
+          onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
+          className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all"
+        />
+      </div>
+
+      {/* TADBIRLAR VA PROYEKTLAR */}
+      <div className="mb-6">
+        <label className="block text-xs text-white/40 font-bold uppercase tracking-wider mb-2">Ishtirok etgan tadbirlaringiz yoki loyihalaringiz</label>
+        <textarea
+          placeholder="Yaqinda universitetlararo o'tkazilgan 'UniHack' tanlovida 2-o'rinni oldim..."
+          rows={3}
+          value={formData.projects}
+          onChange={(e) => setFormData({ ...formData, projects: e.target.value })}
+          className="w-full bg-[#05070f] border border-white/[0.08] focus:border-indigo-500/50 rounded-xl px-4 py-3 text-sm text-white outline-none transition-all resize-none"
         />
       </div>
 

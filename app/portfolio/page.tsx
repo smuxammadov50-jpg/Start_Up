@@ -12,23 +12,21 @@ export interface PortfolioData {
   phone: string;
   image: string;
   job: string;
-  company: string; // Qo'shimcha: Hozirgi joyi/O'qish joyi
-  startupName?: string;
-  startupDesc?: string;
-  skills: string; // Qo'shimcha: Texnologiyalar/Ko'nikmalar
+  company: string; 
+  address: string;     // Yangi: Yashash manzili
+  interests: string;   // Yangi: Qiziqishlar
+  projects: string;    // Yangi: Tadbirlar/Loyihalar
 }
 
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState<"create" | "building">("create");
   const [portfolios, setPortfolios] = useState<PortfolioData[]>([]);
 
-  // LocalStorage'dan ma'lumotlarni o'qish
   useEffect(() => {
     const saved = localStorage.getItem("user_portfolios");
     if (saved) setPortfolios(JSON.parse(saved));
   }, []);
 
-  // Yangi portfolio qo'shish (Max 2 ta)
   const handleCreate = (newData: Omit<PortfolioData, "id">) => {
     if (portfolios.length >= 2) {
       alert("Xatolik: Maksimum 2 tagacha portfolio yaratishingiz mumkin!");
@@ -38,10 +36,9 @@ export default function PortfolioPage() {
     const updated = [...portfolios, created];
     setPortfolios(updated);
     localStorage.setItem("user_portfolios", JSON.stringify(updated));
-    setActiveTab("building"); // Avtomatik yaratilgan portfolioga o'tkazish
+    setActiveTab("building");
   };
 
-  // Portfolioni o'chirish
   const handleDelete = (id: string) => {
     const updated = portfolios.filter((p) => p.id !== id);
     setPortfolios(updated);
@@ -53,11 +50,11 @@ export default function PortfolioPage() {
       
       <div className="max-w-5xl mx-auto w-full px-5 py-10 flex-grow">
         <Link href={"/"}>
-          <button className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs">
+          <button className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs cursor-pointer hover:bg-white/10 transition-all mb-6">
             Orqaga qaytish
           </button>
         </Link> 
-        {/* TEPADAGI REJALAR NAVIGATSIYASI */}
+
         <div className="flex justify-center gap-4 mb-12">
           <button
             onClick={() => setActiveTab("create")}
@@ -81,7 +78,6 @@ export default function PortfolioPage() {
           </button>
         </div>
 
-        {/* KONTENT ALMAShIShI */}
         {activeTab === "create" ? (
           portfolios.length >= 2 ? (
             <div className="text-center py-16 border border-dashed border-red-500/20 rounded-[32px] bg-red-500/[0.02]">
